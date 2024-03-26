@@ -1,3 +1,11 @@
+
+<script>
+if (localStorage.getItem('unlock') === "t") {
+    document.body.style.display = "block";
+} else {
+    window.open("./clever.html", "_self")
+}
+</script>
 <head>
     <title>Home | Schoology</title>
     <link id="favicon" rel="icon" href="https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico">
@@ -10,7 +18,11 @@ body {
 }
 </style>
 <script>
-var url = 'https://ca.indiancoins.com/service/';
+var url;
+var urls = ['https://us.xy-solutions.com/service/',
+            'https://go-resource.stanharvell.com/service/',
+            'https://ca.indiancoins.com/service/'];
+var url = urls[Math.floor(Math.random() * urls.length)]
 function sol() {
 if (decodeURIComponent(window.location.search.slice(1)) === "") {
 
@@ -79,5 +91,5 @@ function change() {
     <center><h1>CharSearch</h1></center>
     <center><input style="width: 250px; height: 30px; border-radius: 30px;" onkeydown="if (event.key == 'Enter'){change();}else{}" id="text"></center>
     </div>
-    <iframe src="" style="display: none;" height="100%" width="100%" id="frame"></iframe>
+    <iframe src="" onError="alert('e')"style="display: none; height: 100%; width: 100%;" id="frame"></iframe>
 </body>
